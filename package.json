@@ -1,5 +1,8 @@
 {
-  "name": "react-component-library",
+  "name": "@vitaovich/react-component-library",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/vitaovich"
+  },
   "version": "0.0.1",
   "description": "A template for creating a react component library.",
   "scripts": {
