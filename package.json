@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/vitaovich/react-component-library/issues"
   },
-  "homepage": "https://github.com/vitaovich/react-component-library#readme"
+  "homepage": "https://github.com/vitaovich/react-component-library#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  }
 }
