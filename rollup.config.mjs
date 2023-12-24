@@ -1,7 +1,9 @@
+import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
+// import terser from '@rollup/plugin-terser';
 
 import postcss from "rollup-plugin-postcss";
 
@@ -21,13 +23,20 @@ export default [
         format: "esm",
         sourcemap: true,
       },
+      // {
+      //   file: 'dist/min/bundle.min.js',
+      //   format: 'iife',
+      //   name: 'version',
+      //   plugins: [terser()]
+      // },
     ],
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ tsconfig: "./tsconfig.json", exclude: ["**/*.stories.tsx", "**/*.test.tsx"] }),
       postcss(),
-    ],
+      json(),
+    ]
   },
   {
     input: "dist/esm/types/index.d.ts",
